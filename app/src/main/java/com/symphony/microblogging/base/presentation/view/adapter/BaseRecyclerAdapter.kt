@@ -142,10 +142,14 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     fun replaceAllItems(items: MutableList<T>) {
-        data = items
-        if (showHeader)
-            notifyItemRangeChanged(1, items.size)
-        else notifyItemRangeChanged(0, items.size)
+        try{
+            data = items
+            if (showHeader)
+                notifyItemRangeChanged(1, items.size)
+            else notifyItemRangeChanged(0, items.size)
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
     }
 
     fun addItemFirst(item: T) {

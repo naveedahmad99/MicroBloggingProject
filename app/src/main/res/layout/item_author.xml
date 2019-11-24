@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
-            app:cardBackgroundColor="@color/dark_grey"
+            app:cardBackgroundColor="@color/authors_color"
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardElevation="@dimen/_10sdp">
 
@@ -75,7 +75,7 @@
                         android:maxLines="1"
                         android:text="@{item.email}"
                         android:ellipsize="end"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@android:color/white"
                         android:textSize="@dimen/_12sdp"/>
             </LinearLayout>
         </LinearLayout>

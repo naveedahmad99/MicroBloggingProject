@@ -3,5 +3,5 @@
     <color name="colorPrimary">#FFB300</color>
     <color name="colorPrimaryDark">#DA9C01</color>
     <color name="colorAccent">#C0CA33</color>
-    <color name="dark_grey">#696B6A</color>
+    <color name="authors_color">@color/colorPrimaryDark</color>
 </resources>
