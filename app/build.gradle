@@ -105,4 +105,35 @@ dependencies {
     configurations {
         all*.exclude group: 'com.google.guava', module: 'listenablefuture'
     }
+
+    // dagger
+    implementation daggerDependencies.dagger
+    kapt daggerDependencies.daggerCompiler
+    implementation daggerDependencies.daggerAndroid
+    implementation daggerDependencies.daggerAndroidSupport
+    kapt daggerDependencies.daggerAndroidProcessor
+    implementation rxDependencies.rxJava
+    implementation rxDependencies.rxAndroid
+
+    //Network
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.converterScalars
+    implementation retrofitDependencies.converterGson
+    implementation retrofitDependencies.okhttp
+    implementation retrofitDependencies.okhttpLogging
+    implementation retrofitDependencies.retrofitRx
+    implementation dataDependencies.okhttpFacebook
+
+    //Parcel
+    implementation dataDependencies.parcelerApi
+    kapt dataDependencies.parceler
+
+    //Room DB
+    implementation roomDependencies.runtime
+    implementation roomDependencies.compiler
+    implementation roomDependencies.rx
+    annotationProcessor roomDependencies.runtime
+    annotationProcessor roomDependencies.compiler
+    debugImplementation leakCanaryDependencies.developmentLeakCanary
+    releaseImplementation leakCanaryDependencies.releaseLeakCanary
 }
