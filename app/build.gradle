@@ -134,4 +134,6 @@ dependencies {
     implementation roomDependencies.rx
     annotationProcessor roomDependencies.runtime
     annotationProcessor roomDependencies.compiler
+    debugImplementation leakCanaryDependencies.developmentLeakCanary
+    releaseImplementation leakCanaryDependencies.releaseLeakCanary
 }
