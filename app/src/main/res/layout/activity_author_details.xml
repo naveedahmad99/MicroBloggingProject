@@ -6,7 +6,7 @@
 
         <variable
                 name="author"
-                type="com.tasks.microblogging.data.remote.network.response.Author"/>
+                type="com.symphony.microblogging.data.remote.network.response.Author"/>
 
         <import type="android.view.View"/>
     </data>
