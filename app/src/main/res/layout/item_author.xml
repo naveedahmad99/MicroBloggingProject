@@ -2,11 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:bind="http://schemas.android.com/tools">
-
     <data>
-
         <import type="android.view.View"/>
-
         <variable
                 name="item"
                 type="com.symphony.microblogging.data.remote.network.response.Author"/>
@@ -16,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
-            app:cardBackgroundColor="@color/dark_terquiase"
+            app:cardBackgroundColor="@color/dark_grey"
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardElevation="@dimen/_10sdp">
 
@@ -57,6 +54,17 @@
                         android:text="@{item.name}"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/_14sdp"/>
+
+                <TextView
+                    android:id="@+id/tvAuthorUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@{item.userName}"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_12sdp"/>
 
                 <TextView
                         android:id="@+id/tvAuthorEmail"
