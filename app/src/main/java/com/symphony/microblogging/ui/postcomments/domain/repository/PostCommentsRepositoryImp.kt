@@ -15,5 +15,11 @@ class PostCommentsRepositoryImp @Inject constructor(
         sort: String,
         order: String
     ): Single<List<Comment>> =
-        remoteDataSource.getPostComments(postId = postId, page = page, limit = limit, sort = sort, order = order)
+        remoteDataSource.getPostComments(
+            postId = postId,
+            page = page,
+            limit = limit,
+            sort = sort,
+            order = order
+        )
 }

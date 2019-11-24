@@ -6,9 +6,9 @@
 
         <variable
             name="author"
-            type="com.symphony.microblogging.data.remote.network.response.Author"/>
+            type="com.symphony.microblogging.data.remote.network.response.Author" />
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -42,7 +42,7 @@
                     bind:backgroundImageUrl="@{author.avatarUrl}"
                     app:riv_border_color="@android:color/white"
                     app:riv_border_width="@dimen/_2sdp"
-                    android:src="@color/colorPrimary"/>
+                    android:src="@color/colorPrimary" />
 
                 <LinearLayout
                     app:layout_constraintStart_toEndOf="@+id/imgAuthor"
@@ -61,7 +61,7 @@
                         android:textColor="@android:color/white"
                         android:text="@{author.name}"
                         android:textSize="@dimen/_14sdp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
 
                     <TextView
@@ -71,7 +71,7 @@
                         android:layout_marginTop="@dimen/_4sdp"
                         android:textColor="@android:color/white"
                         android:text="@{author.userName}"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_12sdp" />
 
                     <TextView
                         android:id="@+id/tvAuthorEmail"
@@ -80,16 +80,17 @@
                         android:layout_marginTop="@dimen/_4sdp"
                         android:textColor="@android:color/white"
                         android:text="@{author.email}"
-                        android:textSize="@dimen/_12sdp"/>
+                        android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <View
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_width="match_parent"
                 app:layout_scrollFlags="scroll|snap"
                 android:layout_height="@dimen/_1sdp"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -108,12 +109,12 @@
                     android:id="@+id/rvPosts"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scrollbars="none"/>
+                    android:scrollbars="none" />
 
                 <include
                     android:id="@+id/llNoData"
                     layout="@layout/layout_no_data"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
             </LinearLayout>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -7,13 +7,13 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 fun formatDate(date: Date = Calendar.getInstance().time, format: String = "YYYY-MM-dd"): String {
-	val df = SimpleDateFormat(format, Locale.getDefault())
-	return df.format(date)
+    val df = SimpleDateFormat(format, Locale.getDefault())
+    return df.format(date)
 }
 
 inline fun <reified T> Gson.fromJson(json: String) =
-		this.fromJson<T>(json, object : TypeToken<T>() {}.type)
+    this.fromJson<T>(json, object : TypeToken<T>() {}.type)
 
 fun Int.dpToPx(): Float {
-	return this * Resources.getSystem().displayMetrics.density
+    return this * Resources.getSystem().displayMetrics.density
 }

@@ -102,7 +102,8 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHo
         recyclerView: RecyclerView,
         linearLayoutManager: LinearLayoutManager
     ) {
-        recyclerView.addOnScrollListener(object : EndlessRecyclerOnScrollListener(linearLayoutManager) {
+        recyclerView.addOnScrollListener(object :
+            EndlessRecyclerOnScrollListener(linearLayoutManager) {
             private var itemCountWithoutHeader: Int = 0
             override fun onLoadMore() {
                 itemCountWithoutHeader = if (showHeader) {
@@ -142,12 +143,12 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     fun replaceAllItems(items: MutableList<T>) {
-        try{
+        try {
             data = items
             if (showHeader)
                 notifyItemRangeChanged(1, items.size)
             else notifyItemRangeChanged(0, items.size)
-        }catch (ex: Exception){
+        } catch (ex: Exception) {
             ex.printStackTrace()
         }
     }
@@ -212,7 +213,8 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHo
 
     protected abstract fun onBindMainViewHolder(holder: RecyclerView.ViewHolder, position: Int)
     protected abstract fun getAdapterPageSize(): Int
-    private inner class EmptyViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView)
+    private inner class EmptyViewHolder internal constructor(itemView: View) :
+        RecyclerView.ViewHolder(itemView)
 
     interface OnLoadMoreListener {
         fun onLoadMore()

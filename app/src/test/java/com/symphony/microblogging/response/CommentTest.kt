@@ -12,7 +12,7 @@ class CommentTest {
 
     @Before
     fun setUp() {
-        json ="{\"id\": 46914,\n" +
+        json = "{\"id\": 46914,\n" +
                 "\"date\": \"2017-12-30T22:52:15.164Z\",\n" +
                 "\"body\": \"Ducimus optio molestiae recusandae dolor quidem non velit cum et. Harum corporis qui reprehenderit. Quo eligendi est et explicabo doloribus maxime.\",\n" +
                 "\"userName\": \"Vaughn_OHara89\",\n" +
@@ -20,7 +20,7 @@ class CommentTest {
                 "\"avatarUrl\": \"https://s3.amazonaws.com/uifaces/faces/twitter/darylws/128.jpg\",\n" +
                 "\"postId\": 1914\n" +
                 "}"
-            comment = Gson().fromJson(json, Comment::class.java)
+        comment = Gson().fromJson(json, Comment::class.java)
     }
 
     @Test

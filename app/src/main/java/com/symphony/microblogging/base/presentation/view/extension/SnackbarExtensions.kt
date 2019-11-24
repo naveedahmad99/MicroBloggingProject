@@ -28,7 +28,8 @@ inline fun View.showSnack(
 
 fun View.showSnack(message: String, length: Int = Snackbar.LENGTH_LONG) {
     val snack = Snackbar.make(this, message, length)
-    val mainTextView = snack.view.findViewById(com.google.android.material.R.id.snackbar_text) as TextView
+    val mainTextView =
+        snack.view.findViewById(com.google.android.material.R.id.snackbar_text) as TextView
     mainTextView.setTextColor(Color.WHITE)
     mainTextView.gravity = Gravity.CENTER_HORIZONTAL
     snack.view.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT

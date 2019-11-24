@@ -6,7 +6,7 @@
 
     <dist:module dist:instant="true" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".App"
@@ -22,12 +22,12 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.authorslist.presetation.view.activity.AuthorsActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.authordetails.presentation.view.activity.AuthorDetailsActivity"/>
-        <activity android:name=".ui.postcomments.presentation.view.activity.PostCommentsActivity"/>
+        <activity android:name=".ui.authordetails.presentation.view.activity.AuthorDetailsActivity" />
+        <activity android:name=".ui.postcomments.presentation.view.activity.PostCommentsActivity" />
     </application>
 
 </manifest>

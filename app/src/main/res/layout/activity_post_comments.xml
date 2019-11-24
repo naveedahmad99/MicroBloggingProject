@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:bind="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
-                name="post"
-                type="com.symphony.microblogging.data.remote.network.response.Post"/>
+            name="post"
+            type="com.symphony.microblogging.data.remote.network.response.Post" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/llMainContent"
-            android:background="@android:color/white"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:id="@+id/llMainContent"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                app:elevation="0dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            app:elevation="0dp">
 
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    app:layout_scrollFlags="scroll|snap"
-                    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:layout_scrollFlags="scroll|snap"
+                android:orientation="vertical">
 
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_10sdp"
-                        android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    android:orientation="horizontal">
 
                     <com.makeramen.roundedimageview.RoundedImageView
-                            android:id="@+id/imgPost"
-                            android:layout_width="@dimen/_60sdp"
+                        android:id="@+id/imgPost"
+                        android:layout_width="@dimen/_60sdp"
                         android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_height="@dimen/_60sdp"
-                            app:riv_oval="true"
-                            android:scaleType="fitXY"
-                            bind:backgroundImageUrl="@{post.imageUrl}"
-                            app:riv_border_color="@android:color/white"
-                            app:riv_border_width="@dimen/_2sdp"
-                            android:src="@color/colorPrimary"/>
+                        android:layout_height="@dimen/_60sdp"
+                        app:riv_oval="true"
+                        android:scaleType="fitXY"
+                        bind:backgroundImageUrl="@{post.imageUrl}"
+                        app:riv_border_color="@android:color/white"
+                        app:riv_border_width="@dimen/_2sdp"
+                        android:src="@color/colorPrimary" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -64,7 +64,7 @@
                             android:ellipsize="end"
                             android:text="@{post.title}"
                             android:textColor="@android:color/white"
-                            android:textSize="@dimen/_14sdp"/>
+                            android:textSize="@dimen/_14sdp" />
 
                         <TextView
                             android:id="@+id/tvPostBody"
@@ -75,7 +75,7 @@
                             android:text="@{post.body}"
                             android:ellipsize="end"
                             android:textColor="@android:color/white"
-                            android:textSize="@dimen/_12sdp"/>
+                            android:textSize="@dimen/_12sdp" />
 
                         <TextView
                             android:id="@+id/tvPostDate"
@@ -91,40 +91,40 @@
                             android:paddingEnd="@dimen/_5sdp"
                             android:alpha=".7"
                             android:textColor="@android:color/white"
-                            android:textSize="@dimen/_10sdp"/>
+                            android:textSize="@dimen/_10sdp" />
 
                     </LinearLayout>
                 </LinearLayout>
 
                 <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_1sdp"
-                        android:background="@color/colorPrimary"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/colorPrimary" />
             </LinearLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/srlComments"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:id="@+id/srlComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvComments"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scrollbars="none"/>
+                    android:id="@+id/rvComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
 
                 <include
-                        android:id="@+id/llNoData"
-                        layout="@layout/layout_no_data"
-                        android:visibility="gone"/>
+                    android:id="@+id/llNoData"
+                    layout="@layout/layout_no_data"
+                    android:visibility="gone" />
             </LinearLayout>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

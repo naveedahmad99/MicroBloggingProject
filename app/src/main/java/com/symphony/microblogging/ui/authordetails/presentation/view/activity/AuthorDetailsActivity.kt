@@ -55,7 +55,8 @@ class AuthorDetailsActivity : AppCompatActivity(), BaseRecyclerAdapter.OnLoadMor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
-        activityAuthorDetailsBinding = DataBindingUtil.setContentView(this, R.layout.activity_author_details)
+        activityAuthorDetailsBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_author_details)
         bindAuthor()
         setupControllers()
         getAuthorPosts()
