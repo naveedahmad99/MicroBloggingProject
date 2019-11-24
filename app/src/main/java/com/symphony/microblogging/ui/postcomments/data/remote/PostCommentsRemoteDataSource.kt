@@ -6,6 +6,18 @@ import io.reactivex.Single
 import javax.inject.Inject
 
 class PostCommentsRemoteDataSource @Inject constructor(private val microBloggingAPI: MicroBloggingAPI) {
-    fun getPostComments(postId: Int, page: Int, limit: Int, sort: String, order: String): Single<List<Comment>> =
-        microBloggingAPI.loadPostComments(postId = postId, page = page, limit = limit, sort = sort, order = order)
+    fun getPostComments(
+        postId: Int,
+        page: Int,
+        limit: Int,
+        sort: String,
+        order: String
+    ): Single<List<Comment>> =
+        microBloggingAPI.loadPostComments(
+            postId = postId,
+            page = page,
+            limit = limit,
+            sort = sort,
+            order = order
+        )
 }

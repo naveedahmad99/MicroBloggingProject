@@ -55,7 +55,8 @@ class PostCommentsActivity : AppCompatActivity(), BaseRecyclerAdapter.OnLoadMore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
-        activityPostCommentsBinding = DataBindingUtil.setContentView(this, R.layout.activity_post_comments)
+        activityPostCommentsBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_post_comments)
         bindPost()
         setupControllers()
         getPostComments()

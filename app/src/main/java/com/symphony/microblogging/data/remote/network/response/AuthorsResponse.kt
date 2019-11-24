@@ -34,5 +34,11 @@ data class Address(
 
 @BindingAdapter("bind:backgroundImageUrl")
 fun loadBackgroundImage(view: ImageView, imageUrl: String?) {
-    imageUrl?.let { view.loadFromUrl(url = it, placeholder = R.color.colorPrimary, isRounded = true) }
+    imageUrl?.let {
+        view.loadFromUrl(
+            url = it,
+            placeholder = R.color.colorPrimary,
+            isRounded = true
+        )
+    }
 }

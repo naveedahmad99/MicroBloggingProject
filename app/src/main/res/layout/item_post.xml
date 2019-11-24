@@ -1,99 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:bind="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
-                name="item"
-                type="com.symphony.microblogging.data.remote.network.response.Post"/>
+            name="item"
+            type="com.symphony.microblogging.data.remote.network.response.Post" />
     </data>
 
     <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:cardElevation="@dimen/_10sdp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_10sdp">
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:minHeight="@dimen/_120sdp"
-                android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minHeight="@dimen/_100sdp"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
 
             <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/imgPost"
-                    android:layout_width="@dimen/_60sdp"
-                    android:layout_height="@dimen/_60sdp"
-                    app:riv_oval="true"
-                    android:scaleType="fitXY"
-                    bind:backgroundImageUrl="@{item.imageUrl}"
-                    app:riv_border_color="@android:color/white"
-                    app:riv_border_width="@dimen/_2sdp"
-                    android:src="@color/colorPrimary"/>
+                android:id="@+id/imgPost"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:scaleType="fitXY"
+                android:layout_gravity="top"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@color/colorPrimary"
+                app:riv_border_color="@android:color/white"
+                app:riv_border_width="@dimen/_2sdp"
+                app:riv_oval="true"
+                bind:backgroundImageUrl="@{item.imageUrl}" />
 
             <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/_10sdp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp">
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvPostTitle"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:layout_marginTop="@dimen/_20sdp"
-                        android:layout_marginBottom="@dimen/_20sdp"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@{item.title}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
 
                     <TextView
-                            android:id="@+id/tvPostTitle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAlignment="viewStart"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:text="@{item.title}"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_14sdp"/>
-
-                    <TextView
-                            android:id="@+id/tvPostBody"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAlignment="viewStart"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:maxLines="3"
-                            android:text="@{item.body}"
-                            android:ellipsize="end"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_12sdp"/>
+                        android:id="@+id/tvPostBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:text="@{item.body}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_10sdp" />
                 </LinearLayout>
 
                 <TextView
-                        android:id="@+id/tvPostDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="viewEnd"
-                        android:paddingTop="@dimen/_5sdp"
-                        android:maxLines="1"
-                        android:text="@{item.date.toLocaleString()}"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentEnd="true"
-                        android:ellipsize="end"
-                        android:paddingStart="@dimen/_5sdp"
-                        android:paddingEnd="@dimen/_5sdp"
-                        android:paddingBottom="@dimen/_5sdp"
-                        android:alpha=".7"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_10sdp"/>
+                    android:id="@+id/tvPostDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:alpha=".7"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="@{item.date.toLocaleString()}"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_10sdp" />
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

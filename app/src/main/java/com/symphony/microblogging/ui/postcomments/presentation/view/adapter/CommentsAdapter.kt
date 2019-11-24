@@ -33,7 +33,8 @@ class CommentsAdapter : BaseRecyclerAdapter<Comment>() {
         }
     }
 
-    private class CommentsViewHolder(val binding: ItemCommentBinding) : RecyclerView.ViewHolder(binding.root) {
+    private class CommentsViewHolder(val binding: ItemCommentBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Comment) {
             binding.item = item
             binding.executePendingBindings()

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Micro Blogs</string>
+    <string name="app_name">Blogging</string>
     <string name="internet_connection">No internet connection</string>
 
     //AuthorsList

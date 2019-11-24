@@ -42,7 +42,8 @@ class PostsAdapter : BaseRecyclerAdapter<Post>() {
         }
     }
 
-    private class PostsViewHolder(val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
+    private class PostsViewHolder(val binding: ItemPostBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Post) {
             binding.item = item
             binding.executePendingBindings()

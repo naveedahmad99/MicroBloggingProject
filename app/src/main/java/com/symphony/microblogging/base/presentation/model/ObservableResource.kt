@@ -23,8 +23,14 @@ class ObservableResource<T> : SingleLiveEvent<T>() {
         super.observe(owner, successObserver)
         loadingObserver?.let { loading.observe(owner, it) }
         (error as ErrorLiveData).observe(
-            owner, commonErrorObserver, httpErrorConsumer, networkErrorConsumer, unExpectedErrorConsumer,
-            serverDownErrorConsumer, timeOutErrorConsumer, unAuthorizedErrorConsumer
+            owner,
+            commonErrorObserver,
+            httpErrorConsumer,
+            networkErrorConsumer,
+            unExpectedErrorConsumer,
+            serverDownErrorConsumer,
+            timeOutErrorConsumer,
+            unAuthorizedErrorConsumer
         )
     }
 
@@ -60,20 +66,50 @@ class ObservableResource<T> : SingleLiveEvent<T>() {
 
         private fun addProperObserver(value: MicroBloggingException) {
             when (value.kind) {
-                MicroBloggingException.Kind.NETWORK -> networkErrorConsumer?.let { observe(ownerRef!!, it) }
+                MicroBloggingException.Kind.NETWORK -> networkErrorConsumer?.let {
+                    observe(
+                        ownerRef!!,
+                        it
+                    )
+                }
                     ?: observe(ownerRef!!, commonErrorConsumer!!)
-                MicroBloggingException.Kind.HTTP -> httpErrorConsumer?.let { observe(ownerRef!!, it) }
+                MicroBloggingException.Kind.HTTP -> httpErrorConsumer?.let {
+                    observe(
+                        ownerRef!!,
+                        it
+                    )
+                }
                     ?: observe(ownerRef!!, commonErrorConsumer!!)
-                MicroBloggingException.Kind.UNEXPECTED -> unExpectedErrorConsumer?.let { observe(ownerRef!!, it) }
+                MicroBloggingException.Kind.UNEXPECTED -> unExpectedErrorConsumer?.let {
+                    observe(
+                        ownerRef!!,
+                        it
+                    )
+                }
                     ?: observe(ownerRef!!, commonErrorConsumer!!)
 
-                MicroBloggingException.Kind.SERVER_DOWN -> serverDownErrorConsumer?.let { observe(ownerRef!!, it) }
+                MicroBloggingException.Kind.SERVER_DOWN -> serverDownErrorConsumer?.let {
+                    observe(
+                        ownerRef!!,
+                        it
+                    )
+                }
                     ?: observe(ownerRef!!, commonErrorConsumer!!)
 
-                MicroBloggingException.Kind.TIME_OUT -> timeOutErrorConsumer?.let { observe(ownerRef!!, it) }
+                MicroBloggingException.Kind.TIME_OUT -> timeOutErrorConsumer?.let {
+                    observe(
+                        ownerRef!!,
+                        it
+                    )
+                }
                     ?: observe(ownerRef!!, commonErrorConsumer!!)
 
-                MicroBloggingException.Kind.UNAUTHORIZED -> unAuthorizedErrorConsumer?.let { observe(ownerRef!!, it) }
+                MicroBloggingException.Kind.UNAUTHORIZED -> unAuthorizedErrorConsumer?.let {
+                    observe(
+                        ownerRef!!,
+                        it
+                    )
+                }
                     ?: observe(ownerRef!!, commonErrorConsumer!!)
 
                 else -> {

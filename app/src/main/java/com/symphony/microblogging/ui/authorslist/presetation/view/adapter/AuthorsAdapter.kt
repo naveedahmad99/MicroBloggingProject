@@ -44,7 +44,8 @@ class AuthorsAdapter : BaseRecyclerAdapter<Author>() {
         }
     }
 
-    private class AuthorViewHolder(val binding: ItemAuthorBinding) : RecyclerView.ViewHolder(binding.root) {
+    private class AuthorViewHolder(val binding: ItemAuthorBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Author) = with(itemView) {
             binding.item = item
             binding.executePendingBindings()

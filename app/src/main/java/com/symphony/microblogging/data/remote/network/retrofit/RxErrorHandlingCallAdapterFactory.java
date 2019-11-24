@@ -3,6 +3,7 @@ package com.symphony.microblogging.data.remote.network.retrofit;
 
 import com.symphony.microblogging.base.domain.exception.MicroBloggingException;
 import com.symphony.microblogging.data.remote.network.exception.NetworkException;
+
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
