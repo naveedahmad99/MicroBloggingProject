@@ -3,7 +3,6 @@ package com.symphony.microblogging
 import android.app.Activity
 import android.app.Application
 import com.facebook.stetho.Stetho
-import com.squareup.leakcanary.LeakCanary
 import com.symphony.microblogging.injection.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -22,7 +21,7 @@ class App : Application(), HasActivityInjector {
         super.onCreate()
         initDagger()
         initStetho()
-        initLeakCanary()
+//        initLeakCanary()
     }
 
     private fun initStetho() {
@@ -43,7 +42,7 @@ class App : Application(), HasActivityInjector {
             .inject(this)
     }
 
-    private fun initLeakCanary() {
-        LeakCanary.install(this)
-    }
+//    private fun initLeakCanary() {
+//        LeakCanary.install(this)
+//    }
 }
