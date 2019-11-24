@@ -4,6 +4,8 @@ package com.symphony.microblogging.data.remote.network.retrofit;
 import com.symphony.microblogging.base.domain.exception.MicroBloggingException;
 import com.symphony.microblogging.data.remote.network.exception.NetworkException;
 
+import org.jetbrains.annotations.NotNull;
+
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -27,7 +29,7 @@ public class RxErrorHandlingCallAdapterFactory extends CallAdapter.Factory {
     }
 
     @Override
-    public CallAdapter<?, ?> get(final Type returnType, final Annotation[] annotations, final Retrofit retrofit) {
+    public CallAdapter<?, ?> get(@NotNull final Type returnType, @NotNull final Annotation[] annotations, @NotNull final Retrofit retrofit) {
         return new RxCallAdapterWrapper(mOriginalCallAdapterFactory.get(returnType, annotations, retrofit));
     }
 
